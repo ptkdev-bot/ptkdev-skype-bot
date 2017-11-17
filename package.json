@@ -1,0 +1,37 @@
+{
+  "name": "ptkdev_bot",
+  "version": "0.1.0",
+  "description": "Official PTKDev Skype BOT.",
+  "main": "bot.js",
+  "scripts": {
+    "start": "pm2 -o ./logs/debug.log -e ./logs/errors.log start bot.js",
+    "stop": "pm2 stop bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ptkdev/ptkdev-skype-bot.git"
+  },
+  "keywords": [
+    "bot",
+    "ptkdev",
+    "skype"
+  ],
+  "author": "Patryk Rzucidlo [@ptkdev] <info@ptkdev.it> (https://ptkdev.it)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ptkdev/ptkdev-skype-bot/issues"
+  },
+  "homepage": "https://bot-skype.ptkdev.io",
+  "dependencies": {
+    "forever": "^0.15.0",
+    "pm2": "^2.7.2",
+    "path": "^0.12.7",
+    "request": "^2.80.0",
+    "botbuilder": "^3.12.0",
+    "restify": "^6.3.2",
+    "nodemailer": "^4.3.1"
+  },
+  "engines": {
+    "node": ">=8.1.3"
+  }
+}
