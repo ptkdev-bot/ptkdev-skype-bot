@@ -57,8 +57,23 @@ const server = restify.createServer();
 server.listen(process.env.PORT || config.port, function() {
     console.log('%s listening to %s', server.name, server.url);
 });
-const connector = new builder.ChatConnector({ appId: config.bot_appid, appPassword: config.bot_password });
-const bot = new builder.UniversalBot(connector);
+const connector = new botbuilder.ChatConnector({ appId: config.bot_appid, appPassword: config.bot_password });
+const bot = new botbuilder.UniversalBot(connector);
+const intents = new botbuilder.IntentDialog();
+bot.dialog('/', intents);
+
+/**
+ * Message
+ * =====================
+ * Botbuilder Socket.
+ *
+ * @author:     Patryk Rzucidlo [@ptkdev] <info@ptkdev.it> (https://ptkdev.it)
+ * @license:    This code and contributions have 'GNU General Public License v3'
+ * @version:    0.1
+ * @changelog:  0.1 initial release
+ *
+ */
+server.post(config.bot_endpoint, connector.listen());
 
 /**
  * Router
@@ -71,17 +86,9 @@ const bot = new builder.UniversalBot(connector);
  * @changelog:  0.1 initial release
  *
  */
-require(__dirname + '/routes/hears')(bot, config, request);
-require(__dirname + '/routes/command')(bot, config, request);
-/**
- * Message
- * =====================
- * Botbuilder Socket.
- *
- * @author:     Patryk Rzucidlo [@ptkdev] <info@ptkdev.it> (https://ptkdev.it)
- * @license:    This code and contributions have 'GNU General Public License v3'
- * @version:    0.1
- * @changelog:  0.1 initial release
- *
- */
-server.post('/api/messages', connector.listen());
+require(__dirname + '/routes/hears')(bot, config, request, intents);
+require(__dirname + '/routes/command')(bot, config, request, intents);
+
+
+
+

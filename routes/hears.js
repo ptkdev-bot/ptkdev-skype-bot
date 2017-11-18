@@ -9,15 +9,44 @@
  * @changelog:  0.1 initial release
  *
  */
-module.exports = function (bot, config, request) {
-	bot.dialog(/chi ci pensa/i, (session) => session.send('Ci pensa Patryk!'));
-	bot.dialog(/chi lo fa/i, (session) => session.send('Lo può fare Patryk!'));
-	bot.dialog(/chi lo può fare/i, (session) => session.send('Lo può fare Patryk!'));
-	bot.dialog(/roku/i, (session) => session.send('È una merda!'));
-	bot.dialog(/incidente/i, (session) => session.send('Se vuoi ti do 20€'));
-	bot.dialog(/iphone x/i, (session) => session.send('Oh Filippo ma l\'hai preso sto iphone?! Daje stì 1359euri! #NoPovery'));
-	bot.dialog(/da spostare una macchina/i, (session) => session.send('Chiamate Petrucci!!!'));
-	bot.dialog(/angelica losi/i, (session) => session.send('Ti amo!'));
-	bot.dialog(/postazioni/i, (session) => session.send('Se è un progetto di merda sicuramente non in sede'));
-	bot.dialog(/mozzarelle/i, (session) => session.send('Raga avete già ordinato le mozzarelle da Bruno?! Sbrigatevi entro le 13:00!!!'));
+module.exports = function(bot, config, request, intents) {
+    intents.matches(/^chi ci pensa/i, [function(session) {
+        session.send('Ci pensa Patryk!');
+    }]);
+
+    intents.matches(/^chi lo fa/i, [function(session) {
+        session.send('Lo può fare Patryk!');
+    }]);
+
+    intents.matches(/^chi lo può fare/i, [function(session) {
+        session.send('Lo può fare Patryk!');
+    }]);
+
+    intents.matches(/^roku/i, [function(session) {
+        session.send('È una merda!');
+    }]);
+
+    intents.matches(/^incidente/i, [function(session) {
+        session.send('Se vuoi ti do 20€');
+    }]);
+
+    intents.matches(/^iphone x/i, [function(session) {
+        session.send('Oh Filippo ma l\'hai preso sto iphone?! Daje stì 1359euri! #NoPovery');
+    }]);
+
+    intents.matches(/^da spostare una macchina/i, [function(session) {
+        session.send('Chiamate Petrucci!!!');
+    }]);
+
+    intents.matches(/^angelica losi/i, [function(session) {
+        session.send('Ti amo!');
+    }]);
+
+    intents.matches(/^postazioni/i, [function(session) {
+        session.send('Se è un progetto di merda sicuramente non in sede');
+    }]);
+
+    intents.matches(/^mozzarelle/i, [function(session) {
+        session.send('Raga avete già ordinato le mozzarelle da Bruno?! Sbrigatevi entro le 13:00!!!');
+    }]);
 };

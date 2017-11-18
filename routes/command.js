@@ -9,7 +9,7 @@
  * @changelog:  0.1 initial release
  *
  */
-module.exports = function(bot, config, request) {
+module.exports = function(bot, config, request, intents) {
     /**
      * Command: tweet
      * =====================
@@ -30,9 +30,10 @@ module.exports = function(bot, config, request) {
             let obj = JSON.parse(json);
             let tweet = obj.tweets[Math.floor(Math.random() * obj.tweets.length)];
             session.send(tweet);
+            
         });
     }
-    bot.dialog('/tweet', tweet);
+    intents.matches(/^!tweet/i, [tweet]);
 
     /**
      * Command: murales
@@ -54,9 +55,10 @@ module.exports = function(bot, config, request) {
             let obj = JSON.parse(json);
             let murales_url = obj.murales[Math.floor(Math.random() * obj.murales.length)];
             session.send(murales_url);
+            
         });
     }
-    bot.dialog('/murales', murales);
+    intents.matches(/^!murales/i, [murales]);
 
     /**
      * Command: insulta
@@ -77,8 +79,9 @@ module.exports = function(bot, config, request) {
             "@Fearuin sei una merda."
         ];
         session.send(insulta[Math.floor(Math.random() * insulta.length)]);
+        
     }
-    bot.dialog('/insulta', insulta);
+    intents.matches(/^!insulta/i, [insulta]);
 
     /**
      * Command: email
@@ -99,7 +102,7 @@ module.exports = function(bot, config, request) {
         let email_array = [];
         let email_from = '';
         let email_text = session.update.message.text;
-        email_text = email_text.replace("/email ", "");
+        email_text = email_text.replace("!email ", "");
         email_array = email_text.split("|");
         if (typeof email_array[0] !== "undefined") {
             email_from = (email_array[0]).trim();
@@ -139,8 +142,9 @@ module.exports = function(bot, config, request) {
                 }
             });
         }
+        
     }
-    bot.dialog('/email', email);
+    intents.matches(/^!email/i, [email]);
 
     /**
      * Command: social
@@ -155,8 +159,9 @@ module.exports = function(bot, config, request) {
      */
     function social(session) {
         session.send("Facebook: https://fb.me/ptkdev\nTwitter: https://twitter.com/ptkdev\nInstagram: https://instagram.com/ptkdev");
+        
     }
-    bot.dialog('/social', social);
+    intents.matches(/^!social/i, [social]);
 
     /**
      * Command: help
@@ -170,24 +175,9 @@ module.exports = function(bot, config, request) {
      *
      */
     function help(session) {
-        session.send("/tweet - invia un tweet casuale di @ptkdev\n/murales - invia un murales fotografato da @ptkdev\n/social - lista dei social dove trovare @ptkdev\n/email - scrive un messaggio a support@ptkdev.io\n/help - lista comandi e suggerimenti\n\nParole chiave a cui risponde: roku, chi ci pensa, postazioni e altre ancora che devi scoprire :)\n\nVersion: 0.1");
+        session.send("!tweet - invia un tweet casuale di @ptkdev\n\n!murales - invia un murales fotografato da @ptkdev\n\n!social - lista dei social dove trovare @ptkdev\n\n!email - scrive un messaggio a support@ptkdev.io\n\n!help - lista comandi e suggerimenti\n\n\nParole chiave a cui risponde: roku, chi ci pensa, postazioni e altre ancora che devi scoprire :)\n\n\nVersion: 0.1 BETA");
+        
     }
-    bot.dialog('/help', help);
-
-    /**
-     * Command: start
-     * =====================
-     * Send "Ciao!" and help message
-     *
-     * @author:     Patryk Rzucidlo [@ptkdev] <info@ptkdev.it> (https://ptkdev.it)
-     * @license:    This code and contributions have 'GNU General Public License v3'
-     * @version:    0.1
-     * @changelog:  0.1 initial release
-     *
-     */
-    function start(session) {
-        session.send('Ciao!');
-        help(session);
-    }
-    bot.dialog('/', start);
+    intents.matches(/^!help/i, [help]);
+    intents.matches(/^!start/i, [help]);
 };

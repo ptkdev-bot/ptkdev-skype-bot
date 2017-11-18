@@ -4,8 +4,9 @@ module.exports = {
     "port": 3000,
 
     // Skype API
-    "bot_appid": "123456789",
-    "bot_password": 'AbCdfGhIJKlmNoQQRsTUVwxyZ',
+    "bot_appid": "123456789-123456789-123456789-123456789",
+    "bot_password": "AbCdfGhIJKlmNoQQRsTUVwxyZ)",
+    "bot_endpoint": "/api/messages",
 
     // Instagram API
     "ig_token": 'AbCdfGhIJKlmNoQQRsTUVwxyZ',

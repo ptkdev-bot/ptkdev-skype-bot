@@ -18,13 +18,13 @@ You need [Node.js](https://nodejs.org/) (> 8.1) to run this bot.
 ## Commands
 Command                 | Role       | Available at | Description
 ----------------------- | ---------- | ------------ | -----------------
-`/tweet`                | _Everyone_ | _Everywhere_ | Send random tweet of @ptkdev twitter account
-`/murales`              | _Everyone_ | _Everywhere_ | Send random murales of @ptkdev ig account
-`/social`               | _Everyone_ | _Everywhere_ | Send list of my social
-`/stickers`             | _Everyone_ | _Everywhere_ | Send one of stickers.ptkdev.it
-`/email <text>`         | _Everyone_ | _In-Bot_     | Send email to info@ptkdev.it
+`!tweet`                | _Everyone_ | _Everywhere_ | Send random tweet of @ptkdev twitter account
+`!murales`              | _Everyone_ | _Everywhere_ | Send random murales of @ptkdev ig account
+`!social`               | _Everyone_ | _Everywhere_ | Send list of my social
+`!insulta`              | _Everyone_ | _Everywhere_ | Send bad word to my friends
+`!email <text>`         | _Everyone_ | _In-Bot_     | Send email to info@ptkdev.it
 `<text>`                | _Everyone_ | _Groups_     | Response at random word: roku, chi lo fa, etc...
-`/help` \| `/start`     | _Everyone_ | _In-Bot_     | How to use the bot.
+`!help` \| `!start`     | _Everyone_ | _In-Bot_     | How to use the bot.
 
 # License
 
