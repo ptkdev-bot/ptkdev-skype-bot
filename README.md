@@ -6,6 +6,8 @@
 [![Slack Chat](https://img.shields.io/badge/chat%20on-Slack-orange.svg)](https://slack.ptkdev.io)
 [![Paypale Donate](https://img.shields.io/badge/donate-PayPal-red.svg)](https://paypal.me/ptkdev)
 
+[![https://bot-skype.ptkdev.io](https://ptkdev.it/img/bot/ptkdev-skype-bot.png)](https://bot-skype.ptkdev.io)
+
 ## Setup
 You need [Node.js](https://nodejs.org/) (> 8.1) to run this bot.
 
