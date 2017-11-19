@@ -9,7 +9,7 @@
 ## Setup
 You need [Node.js](https://nodejs.org/) (> 8.1) to run this bot.
 
-1. Create a bot via [Microsoft BotFramework](https://dev.botframework.com/bots) and grab a **appid** & **app_password**. 
+1. Create a bot via [Microsoft BotFramework](https://dev.botframework.com/bots/new) and grab a **appid** & **app_password**. 
 2. Clone this repository (unstable) or [download stable version](https://github.com/ptkdev/ptkdev-skype-bot/releases).
 3. Install dependencies via `npm install`.
 4. Copy root file `config.js.tpl` to `config.js`, fill it properly.
